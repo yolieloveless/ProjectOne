@@ -1,0 +1,17 @@
+* {
+    background-color: #f76c6c;
+}
+
+header {
+    text-align: center;
+    color: white;
+    font-size: 10vmin;
+    font-family: 'Roboto', sans-serif;
+}
+
+#start {
+    background-color: white;
+    color: #f76c6c;
+    font-size: 5vmin;
+    font-family: 'Roboto', sans-serif;
+}
