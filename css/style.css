@@ -2,6 +2,21 @@
     background-color: #f76c6c;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+    grid-template-rows: 50px auto 50px;
+    justify-items: center;
+    grid-auto-flow: column;
+}
+
+.slotMachine {
+    grid-column-start: 2;
+    grid-row-start: 2/3;
+    display: inline;
+}
+
+
 header {
     text-align: center;
     color: white;
@@ -9,9 +24,22 @@ header {
     font-family: 'Roboto', sans-serif;
 }
 
-#start {
+#spinBtn {
     background-color: white;
     color: #f76c6c;
     font-size: 5vmin;
     font-family: 'Roboto', sans-serif;
 }
+
+h2 {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border: gray;
+    border-style: solid;
+    border-width: 3px;
+    display: inline-block;
+}
+
+
+
