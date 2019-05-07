@@ -22,7 +22,8 @@ const abc = {
 
 let scores, results, winner;
 
-
+const timerEl = document.querySelector('#timer h2');
+const scoreEl = document.querySelector('#score h2');
 
 document.querySelector('button').addEventListener('click', playSlot);
 
@@ -32,12 +33,19 @@ function playSlot() {
 }
 
 function startTmr(cb) {
-    let time = 10;
+    let time = 100;
     timerEl.textContent = time;
     let timerId = setInterval(function() {
         time--;
+        if (time) {
+            timerEl.textContent = time;
+        }else {
+            clearInterval(timerId);
+            timerEl.textContent = '';
+            cb();
+        }
 
-    }, 3000);
+    }, 1000);
 }
 
 //Needs winner
