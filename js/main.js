@@ -7,29 +7,73 @@
 
 
 /*----- event listeners -----*/
-const lookupABC = ['a', 'b', 'c'];
+var slotArray = ['imgs/cupcake.png', 'imgs/lemon.png', 'imgs/pineapple.png', 'imgs/cupcake.png', 'imgs/lemon.png', 'imgs/pineapple.png', 'imgs/cupcake.png', 'imgs/lemon.png', 'imgs/pineapple.png']
+
+
+// const lookupABC = ['a', 'b', 'c'];
+
 const abc = {
     a: {
-        imgURl: 'imgs/cupcake.png'
+        imgUrl: 'imgs/cupcake.png'
     },
     b: {
-        imgURl: 'imgs/lemon.png'
+        imgUrl: 'imgs/lemon.png'
     },
     c: {
-        imgURl: 'imgs/pineapple.png'
+        imgUrl: 'imgs/pineapple.png'
     }
 };
 
-let scores, results, winner;
+let scores, winner;
 
 const timerEl = document.querySelector('#timer h2');
 const scoreEl = document.querySelector('#score h2');
+const slotEl = document.getElementById('#slotMachine');
 
-document.querySelector('button').addEventListener('click', playSlot);
 
-/*----- functions -----*/
+document.querySelector('#startBtn').addEventListener('click', playSlot);
+document.querySelector('#spinBtn').addEventListener('click', spin);
+
+initialize();
+
+function initialize() {
+  scores = {
+    p: 0,
+  };
+
+  winner = null;
+  render();
+}
+
+function getRandomIdx() {
+   return Math.floor((Math.random() * 10) + 1);
+}
+
+function spin(gameScore) {
+    scores.p = lookupABC[getRandomIdx()];
+    scores.p = lookupABC[getRandomIdx()];
+    scores.p = lookupABC[getRandomIdx()];
+    Winner = win();
+    // scores[winner]++;
+    render();
+  }
+
+function gameScore() {
+    if (slotOne === slotTwo | slotTwo === slotThree) {
+        scores = (p + 50) 
+    } else if (slotOne === slotTwo && slotTwo === slotThree)
+        scores = (p + 100)
+            else if (time === 0 && score < 500)
+                return "LOSER!";
+}
+
+function win() {
+    if (gameScore === 500)
+        return "Winner!";
+}
+
 function playSlot() {
-    startTmr(spin);
+    startTmr(startBtn);
 }
 
 function startTmr(cb) {
@@ -48,22 +92,12 @@ function startTmr(cb) {
     }, 1000);
 }
 
-//Needs winner
-function spin() {
-   results.s = lookupABC[getRandomIdx()]; 
-}
-
-// function winner() {
-//     return results.s 
-// }
-
 function render() {
-    //render score
-    return results.s;
-    //render an image
-    sResultEl.style.backgroundImage = `url(${abc[results.s].imgUrl})`;
-}
-
-function getRandomIdx() {
-    return Math.floor(Math.random() * 3);
-}
+    // render scores
+    scoreEl.textContent = scores.p;
+   
+    // render images 
+    slotEl.style.backgroundImage = `url(${abc[scores.p].imgUrl})`
+  
+  }
+  

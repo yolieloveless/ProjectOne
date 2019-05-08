@@ -10,10 +10,9 @@
     grid-auto-flow: column;
 }
 
-.slotMachine {
-    grid-column-start: 2;
-    grid-row-start: 2/3;
+#slotMachine {
     display: inline;
+   
 }
 
 
@@ -25,6 +24,13 @@ header {
 }
 
 #spinBtn {
+    background-color: white;
+    color: #f76c6c;
+    font-size: 5vmin;
+    font-family: 'Roboto', sans-serif;
+}
+
+#startBtn {
     background-color: white;
     color: #f76c6c;
     font-size: 5vmin;
