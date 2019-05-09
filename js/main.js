@@ -7,10 +7,7 @@
 
 
 /*----- event listeners -----*/
-var slotArray = ['imgs/cupcake.png', 'imgs/lemon.png', 'imgs/pineapple.png', 'imgs/cupcake.png', 'imgs/lemon.png', 'imgs/pineapple.png', 'imgs/cupcake.png', 'imgs/lemon.png', 'imgs/pineapple.png']
-
-
-// const lookupABC = ['a', 'b', 'c'];
+const lookupABC = ['a', 'b', 'c'];
 
 const abc = {
     a: {
@@ -22,17 +19,58 @@ const abc = {
     c: {
         imgUrl: 'imgs/pineapple.png'
     }
+
 };
+
+function random (lookupABC) {
+    var s = "";
+    for (var i = 0; i < lookupABC.length; i++) {
+        s += "" + `<img src="${abc[lookupABC[spinSlot()]].imgUrl}">`;
+        }
+        document.getElementById("slotOne").innerHTML = s;
+}
+
+
+// function slotTwo (lookupABC) {
+//         var t = "";
+//         for (var i = 0; i < lookupABC.length; i++) {
+//             s += "" + `<img src="${abc[lookupABC[i]].imgUrl}">`;
+//             }
+//             document.getElementById("slotTwo").innerHTML = t;
+
+
+//         }
+
+           
+//         function slotThree(lookupABC) {
+//         var u = "";
+//             for (var i = 0; i < lookupABC.length; i++) {
+//                 s += "" + `<img src="${abc[lookupABC[i]].imgUrl}">`;
+//                 }
+//                 document.getElementById("slotThree").innerHTML = u;
+//     }
+
+function spinSlot() {
+    return Math.floor(Math.random() * lookupABC.length)
+    // lookupABC.sort(function() {
+    //     return 0.5 - Math.random();
+    // });
+}
+
+
+
 
 let scores, winner;
 
 const timerEl = document.querySelector('#timer h2');
 const scoreEl = document.querySelector('#score h2');
-const slotEl = document.getElementById('#slotMachine');
+const slotEl = document.querySelector('#slotMachine div');
 
 
 document.querySelector('#startBtn').addEventListener('click', playSlot);
-document.querySelector('#spinBtn').addEventListener('click', spin);
+// document.querySelector('#spinBtn').addEventListener('click', spin);
+
+var p = scores
 
 initialize();
 
@@ -45,23 +83,23 @@ function initialize() {
   render();
 }
 
-function getRandomIdx() {
-   return Math.floor((Math.random() * 10) + 1);
-}
+// function getRandomIdx(slotArray) {
+//    return Math.floor((Math.random() * 10) + 1);
+// }
 
-function spin(gameScore) {
-    scores.p = lookupABC[getRandomIdx()];
-    scores.p = lookupABC[getRandomIdx()];
-    scores.p = lookupABC[getRandomIdx()];
-    Winner = win();
-    // scores[winner]++;
-    render();
-  }
+// function spin(gameScore) {
+//     scores.p = abc[getRandomIdx()];
+//     scores.p = abc[getRandomIdx()];
+//     scores.p = abc[getRandomIdx()];
+//     Winner = win();
+//     // scores[winner]++;
+//     render();
+//   }
 
 function gameScore() {
-    if (slotOne === slotTwo | slotTwo === slotThree) {
+    if ('imgs/cupcake.png' === 'imgs/cupcake.png' | 'imgs/lemon.png' === 'imgs/lemon.png' | 'imgs/pineapple.png' === 'imgs/pineapple.png') {
         scores = (p + 50) 
-    } else if (slotOne === slotTwo && slotTwo === slotThree)
+    } else if ('imgs/cupcake.png' === 'imgs/cupcake.png' &&  'imgs/cupcake.png')
         scores = (p + 100)
             else if (time === 0 && score < 500)
                 return "LOSER!";
@@ -95,9 +133,7 @@ function startTmr(cb) {
 function render() {
     // render scores
     scoreEl.textContent = scores.p;
-   
-    // render images 
-    slotEl.style.backgroundImage = `url(${abc[scores.p].imgUrl})`
+
   
   }
   
