@@ -1,4 +1,3 @@
-/*----- constants -----*/
 
 const lookupABC = ['a', 'b', 'c'];
 
@@ -14,19 +13,6 @@ const abc = {
     }
 
 };
-
-
-
-/*----- app's state (variables) -----*/
-
-
-/*----- cached element references -----*/
-
-
-
-/*----- event listeners -----*/
-
-/*----- functions -----*/
 
 function random(lookupABC) {
     if (gameScore === "Winner!") return;
@@ -46,24 +32,21 @@ let scores, winner;
 
 const scoreEl = document.querySelector('h2');
 const slotEl = document.querySelector('#slotMachine div');
-
 const spnBtn = document.querySelector("button").addEventListener('click', handleClick);
 
-function handleClick(evt){
+function handleClick(evt) {
     if (gameScore === "Winner!") return;
     gameScoreboard()
     win()
     render();
 }
 
-
 var gameScore = 0;
-
 
 function gameScoreboard() {
     if (('imgs/cupcake.png' === 'imgs/cupcake.png') || ('imgs/lemon.png' === 'imgs/lemon.png') || ('imgs/pineapple.png' === 'imgs/pineapple.png')) {
         return gameScore = (gameScore + 50);
-    } else if ('imgs/cupcake.png' === 'imgs/cupcake.png' && 'imgs/cupcake.png') {
+    } else if ('imgs/cupcake.png' === 'imgs/cupcake.png' && 'imgs/cupcake.png' || 'imgs/lemon.png' === 'imgs/lemon.png' && 'imgs/lemon.png' || 'imgs/pineapple.png' === 'imgs/pineapple.png' && 'imgs/pineapple.png') {
         gameScore = gameScore + 100;
     }
     else if (time === 0 && score < 500) {
@@ -74,8 +57,8 @@ function gameScoreboard() {
 }
 
 function win() {
-    if (gameScore >= 500) { gameScore = "Winner!"};
-    }
+    if (gameScore >= 1000) { gameScore = "Winner!" };
+}
 
 
 
