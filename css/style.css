@@ -2,14 +2,17 @@
     background-color: #f76c6c;
 }
 
-.container {
-    display: grid;
+body {
+    text-align: center;
 }
 
 img {
    background-color: white;
+   border: gray;
+   border-style: inset;
+   border-width: 3px;
    height: 150px;
-   width: 150px;  
+   width: 150px;
 }
 
 header {
@@ -24,23 +27,27 @@ header {
     color: #f76c6c;
     font-size: 5vmin;
     font-family: 'Roboto', sans-serif;
+    border: lightpink;
+    border-style: outset;
+    border-width: 3px;
+    margin: auto;
 }
 
-#startBtn {
-    background-color: white;
-    color: #f76c6c;
-    font-size: 5vmin;
+h1 {
+    color: white;
+    font-size: 24px;
     font-family: 'Roboto', sans-serif;
 }
 
 h2 {
+    margin: 50px auto;
     background-color: white;
     height: 50px;
-    width: 50px;
+    width: 150px;
+    padding: 5px;
     border: gray;
     border-style: solid;
     border-width: 3px;
-    display: inline-block;
 }
 
 
