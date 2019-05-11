@@ -60,14 +60,10 @@ function win() {
     if (gameScore >= 1000) { gameScore = "Winner!" };
 }
 
-
-
-
 function render() {
     // render scores
     // scoreEl.textContent = gameScore;
     scoreEl.textContent = gameScore
-
 
 }
 
